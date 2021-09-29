@@ -8,6 +8,8 @@
 tag](https://img.shields.io/github/tag/ShixiangWang/DoAbsolute.svg?label=Github)](https://github.com/ShixiangWang/DoAbsolute)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FShixiangWang%2FDoAbsolute&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
+"YingYa/DoAbsolute" forked from "ShixiangWang/DoAbsolute" on 20210929, then modified some code to reduce the memory usage when large samples running.
+
 The goal of **DoAbsolute** is to automate ABSOLUTE calling for multiple
 samples in parallel way.
 
@@ -28,7 +30,7 @@ link](http://software.broadinstitute.org/cancer/software/genepattern/analyzing-a
 You can install the released version of DoAbsolute with:
 
 ``` r
-remotes::install_github("ShixiangWang/DoAbsolute")
+remotes::install_github("YingYa/DoAbsolute")
 ```
 
 Install ABSOLUTE, the version provided by DoAbsolute is 1.0.6. You can
