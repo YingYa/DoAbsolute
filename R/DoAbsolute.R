@@ -213,8 +213,12 @@ DoAbsolute <- function(Seg, Maf = NULL,
         }
       }
     }
+    rm(list = c("seg", "maf"))
+    gc()
   }
   if (verbose) cat("-> Spliting seg data of samples done.\n")
+  rm(list = c("Seg", "Maf"))
+  gc()
 
   #-- match options
   platform <- match.arg(platform)
@@ -327,6 +331,7 @@ DoAbsolute <- function(Seg, Maf = NULL,
             sink()
           }
         )
+        gc()
       }
     } else {
       foreach(i = seq_along(samples)) %dopar% {
@@ -384,6 +389,7 @@ DoAbsolute <- function(Seg, Maf = NULL,
             sink()
           }
         )
+        gc()
       }
     }
     if (verbose) cat("-> RunAbsolute done. Retrieving results...\n")
@@ -422,6 +428,7 @@ DoAbsolute <- function(Seg, Maf = NULL,
     plot.modes = TRUE, verbose = verbose
   ))
   if (verbose) cat("\n-> Absolute summarize done. Prepare auto-reviewing...\n")
+  gc()
 
   # pp_call_fn = file.path(review.dir, grep("PP-calls_tab.txt", dir(review.dir), value = TRUE))
   # modes_fn = file.path(review.dir, grep("PP-modes.data.RData", dir(review.dir), value = TRUE))
@@ -437,6 +444,7 @@ DoAbsolute <- function(Seg, Maf = NULL,
     verbose = verbose
   ))
   if (verbose) cat("-> Absolute Auto-reviewing done.\n")
+  gc()
 
   reviewed.dir <- file.path(review.dir, "reviewed")
 
